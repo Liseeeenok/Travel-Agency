@@ -1,14 +1,14 @@
 <template>
     <div>
-        <h1>Title</h1>
-        <h2>Item</h2>
+        <navbar/>
     </div>
 </template>
 
 <script>
+import Navbar from "@/components/Navbar.vue";
 
 export default {
-
+    components: { Navbar }
 }
 </script>
 
