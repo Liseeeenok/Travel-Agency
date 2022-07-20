@@ -35,6 +35,8 @@ export default {
     background-color: #F0C53E;
 }
 .navbar {
+    max-width: 1900px;
+    margin: auto;
     height: 56px;
     width: 100%;
     display: flex;
