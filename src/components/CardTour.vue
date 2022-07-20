@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .container {
     width: 100%;
     padding: 2vw 8vw 0;
@@ -61,7 +61,6 @@ export default {
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    margin-bottom: 100px;
 }
 .image__tour {
     height: 200px;

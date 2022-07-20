@@ -3,6 +3,7 @@
         <navbar/>
         <main-intro/>
         <card-tour/>
+        <card-accepted/>
     </div>
 </template>
 
@@ -10,9 +11,10 @@
 import Navbar from "@/components/Navbar.vue";
 import MainIntro from "@/components/MainIntro.vue";
 import CardTour from "./components/CardTour.vue";
+import CardAccepted from "./components/CardAccepted.vue";
 
 export default {
-    components: { Navbar, MainIntro, CardTour }
+    components: { Navbar, MainIntro, CardTour, CardAccepted }
 }
 </script>
 
