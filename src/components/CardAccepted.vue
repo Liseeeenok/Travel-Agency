@@ -6,9 +6,11 @@
             <div class="card__slider">
                 <div class="card__domestic">
                     <div class="card__text">For Domestic</div>
+                    <button class="start__trip">Start trip today</button>
                 </div>
                 <div class="card__inter">
                     <div class="card__text">For International</div>
+                    <button class="start__trip">Start trip today</button>
                 </div>
             </div>
         </div>
@@ -63,6 +65,7 @@ export default {
     background-size: 100% 400px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     height: 400px;
     width: 400px;
     border: 1px solid #000000;
@@ -89,5 +92,15 @@ export default {
     border: 1px solid #000000;
     background-color: rgb(127, 39, 54, 0.6);
     border-radius: 20px;
+    flex-direction: column;
+}
+.start__trip {
+    margin-top: 1vw;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-size: 16px;
+    padding: 20px;
+    border-radius: 80px;
 }
 </style>
