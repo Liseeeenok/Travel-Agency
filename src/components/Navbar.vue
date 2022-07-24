@@ -1,17 +1,17 @@
 <template>
     <div class="container">
         <div class="navbar">
-            <div class="intro__image">
+            <div @click="$router.push('/')" class="intro__image">
                 <div class="intro">
                     Travelline
                 </div>
             </div>
             <div class="list__item">
-                <button class="item">Home</button>
-                <button class="item">Events</button>
-                <button class="item">About</button>
-                <button class="item">Blog</button>
-                <button class="item">Contact</button>
+                <button @click="$router.push('/')" id="home" class="item">Home</button>
+                <button @click="$router.push('/events')" id="Events" class="item">Events</button>
+                <button @click="$router.push('/about')" id="About" class="item">About</button>
+                <button @click="$router.push('/blog')" id="Blog" class="item">Blog</button>
+                <button @click="$router.push('/contact')" id="Contact" class="item">Contact</button>
             </div>
             <div class="number">
                 <img class="number__image" src="@/image/1542.svg"/>
@@ -33,6 +33,7 @@ export default {
     position: relative;
     padding: 1vw 4vw 0px 4vw;
     background-color: #F0C53E;
+    padding-bottom: 0.5vw;
 }
 .navbar {
     max-width: 1900px;
@@ -48,6 +49,9 @@ export default {
     background-image: url("@/image/5420.svg");
     background-size: 100% 100%;
     display: flex;
+}
+.intro__image:hover {
+    cursor: pointer;
 }
 .intro {
     font-family: 'Poppins';
@@ -76,6 +80,15 @@ export default {
     line-height: 33px;
     letter-spacing: 0.02em;
     color: #252641;
+}
+.item:hover {
+    cursor: pointer;
+}
+.item:active {
+    color: #B25A59;
+}
+.item:target {
+    color: aqua;
 }
 .number {
     width: 205px;
