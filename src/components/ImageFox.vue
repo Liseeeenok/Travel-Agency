@@ -20,7 +20,7 @@ export default {
         return {
             UrlImageOne: '',
             NumberImage: 1,
-            UrlAllRand: 'http://shibe.online/api/shibes?count=1&urls=true&httpsUrls=true',
+            UrlAllRand: 'https://shibe.online/api/shibes?count=1&urls=true&httpsUrls=true',
             UrlFoxRand: 'https://randomfox.ca/floof/',
             UrlCatRand: 'https://api.thecatapi.com/v1/images/search',
         }
@@ -47,7 +47,6 @@ export default {
         async giveRandomImageCat() {
             try {
                 const response = await axios.get(this.UrlCatRand);
-                console.log(response)
                 const date = response.data[0].url;
                 this.UrlImageOne = date;
             } catch (e) {
