@@ -65,7 +65,6 @@ export default {
     display: flex;
     justify-content: center;
     margin-top: 1vw;
-    margin-bottom: 100px;
 }
 .btn__api {
     display: flex;

@@ -8,6 +8,8 @@
                 <hr>
                 <h2 style="margin-top: 1vw;">Working with the API:</h2>
                 <image-fox/>
+                <h2 style="margin-top: 1vw;">Working with graph:</h2>
+                <card-graph/>
             </div>
         </div>
     </div>
@@ -16,9 +18,10 @@
 <script>
 import TextList from '@/components/TextList.vue'
 import ImageFox from '../components/ImageFox.vue'
+import CardGraph from '../components/CardGraph.vue'
 export default {
     components: {
-        TextList, ImageFox,
+        TextList, ImageFox, CardGraph,
     }
 }
 </script>
