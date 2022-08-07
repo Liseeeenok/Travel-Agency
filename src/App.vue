@@ -1,6 +1,6 @@
 <template>
     <div>
-        <navbar/>
+        <navbar @clickBurger="clickBurger($event)"/>
         <router-view></router-view>
     </div>
 </template>
@@ -10,6 +10,18 @@ import Navbar from './components/Navbar.vue'
 
 export default {
   components: { Navbar },
+  data() {
+    return {
+        openBurger: false,
+    }
+  },
+  methods: {
+    clickBurger(event) {
+        this.openBurger = event;
+        const body = document.querySelector('body');
+        body.classList.toggle('lock');
+    }
+  },
 
 }
 </script>
@@ -20,5 +32,8 @@ export default {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+body.lock {
+    overflow: hidden;
 }
 </style>

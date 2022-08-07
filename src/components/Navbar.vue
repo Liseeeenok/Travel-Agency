@@ -6,14 +6,17 @@
                     Travelline
                 </div>
             </div>
-            <div class="list__item">
-                <button @click="$router.push('/')" id="home" class="item">Home</button>
-                <button @click="$router.push('/events')" id="Events" class="item">Events</button>
-                <button @click="$router.push('/about')" id="About" class="item">About</button>
-                <button @click="$router.push('/blog')" id="Blog" class="item">Blog</button>
-                <button @click="$router.push('/contact')" id="Contact" class="item">Contact</button>
+            <div class="list__item" :class="openBurger ? 'active' : ''">
+                <button @click="$router.push('/'); ocBurger()" id="home" class="item">Home</button>
+                <button @click="$router.push('/events'); ocBurger()" id="Events" class="item">Events</button>
+                <button @click="$router.push('/about'); ocBurger()" id="About" class="item">About</button>
+                <button @click="$router.push('/blog'); ocBurger()" id="Blog" class="item">Blog</button>
+                <button @click="$router.push('/contact'); ocBurger()" id="Contact" class="item">Contact</button>
             </div>
-            <div class="number">
+            <div class="burger" id="burger" @click="ocBurger()">
+				<span></span>
+			</div>
+            <div class="number" :class="openBurger ? 'active' : ''">
                 <img class="number__image" src="@/image/1542.svg"/>
                 <button class="number__button">+1 (000) 000 000</button>
             </div>
@@ -23,7 +26,17 @@
 
 <script>
 export default {
-
+    data() {
+        return {
+            openBurger: false,
+            }
+    },
+    methods: {
+        ocBurger() {
+            this.openBurger = !this.openBurger;
+            this.$emit('clickBurger', this.openBurger)
+        }
+    }
 }
 </script>
 
@@ -112,5 +125,82 @@ export default {
 .number__image {
     width: 22px;
     margin-left: 10%;
+}
+@media (max-width: 769px) {
+    .burger span {
+		content: '';
+		background-color: #000;
+		position: absolute;
+		width: 50px;
+		height: 0.7vw;
+		top: 50%;
+        top: 2.25vw;
+		}
+    .burger {
+        margin: auto 0;
+		display: block;
+		position: relative;
+		height: 5vw;
+		width: 50px;
+		z-index: 31;
+	}
+    .burger:before,.burger:after {
+		content: '';
+		background-color: #000;
+		position: absolute;
+		width: 100%;
+		height: 0.7vw;
+	}
+    .burger:before {
+		top: 0;
+	}
+	.burger:after {
+		bottom: 0;
+	}
+    .list__item {
+		overflow: auto;
+		display: flex;
+		position: fixed;
+		font-size: 6vw;
+		top: 60px;
+		left: 0;
+        height: 100%;
+		width: 100%;
+		background-color: #F0C53E;
+		z-index: 30;
+		text-align: center;
+		flex-direction: column;
+		transform: translateY(-120vh);
+		transition: all 0.3s ease 0s;
+        max-width: none;
+        padding-bottom: 25%;
+	}
+	.list__item.active {
+		transform: translateY(0);
+	}
+    .item {
+        margin: auto;
+        font-size: 27px;
+    }
+    .number {
+		position: fixed;
+		z-index: 31;
+		justify-content: space-between;
+		transform: translateY(-120vh);
+		transition: all 0.3s ease 0s;
+        top: 90%;
+        width: 90%;
+	}
+	.number.active {
+		transform: translateY(0);
+	}
+    .number__button {
+        font-size: 20px;
+        line-height: 60px;
+        margin: auto;
+    }
+    .number__image {
+        width: 40px;
+    }
 }
 </style>
