@@ -19,7 +19,12 @@ export default {
     clickBurger(event) {
         this.openBurger = event;
         const body = document.querySelector('body');
-        body.classList.toggle('lock');
+        if (this.openBurger) {
+            body.classList.add('lock');
+        } else {
+            body.classList.remove('lock');
+        }
+        
     }
   },
 

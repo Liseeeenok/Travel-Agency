@@ -1,19 +1,19 @@
 <template>
     <div class="container">
         <div class="navbar">
-            <div @click="$router.push('/')" class="intro__image">
+            <div @click="$router.push('/'); closeBurger()" class="intro__image">
                 <div class="intro">
                     Travelline
                 </div>
             </div>
             <div class="list__item" :class="openBurger ? 'active' : ''">
-                <button @click="$router.push('/'); ocBurger()" id="home" class="item">Home</button>
-                <button @click="$router.push('/events'); ocBurger()" id="Events" class="item">Events</button>
-                <button @click="$router.push('/about'); ocBurger()" id="About" class="item">About</button>
-                <button @click="$router.push('/blog'); ocBurger()" id="Blog" class="item">Blog</button>
-                <button @click="$router.push('/contact'); ocBurger()" id="Contact" class="item">Contact</button>
+                <button @click="$router.push('/'); closeBurger()" id="home" class="item">Home</button>
+                <button @click="$router.push('/events'); closeBurger()" id="Events" class="item">Events</button>
+                <button @click="$router.push('/about'); closeBurger()" id="About" class="item">About</button>
+                <button @click="$router.push('/blog'); closeBurger()" id="Blog" class="item">Blog</button>
+                <button @click="$router.push('/contact'); closeBurger()" id="Contact" class="item">Contact</button>
             </div>
-            <div class="burger" id="burger" @click="ocBurger()">
+            <div class="burger" id="burger" @click="changeBurger()">
 				<span></span>
 			</div>
             <div class="number" :class="openBurger ? 'active' : ''">
@@ -32,8 +32,12 @@ export default {
             }
     },
     methods: {
-        ocBurger() {
+        changeBurger() {
             this.openBurger = !this.openBurger;
+            this.$emit('clickBurger', this.openBurger)
+        },
+        closeBurger() {
+            this.openBurger = false;
             this.$emit('clickBurger', this.openBurger)
         }
     }
