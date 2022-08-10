@@ -2,7 +2,7 @@
     <div class="container__api">
         <div>
             <div class="btn__api">
-                <button class="btn__input" @click="giveRandomImage()">Get a random photo</button>
+                <button class="btn__input" @click="giveRandomImageDog()">Get a photo of a dog</button>
                 <button class="btn__input" @click="giveRandomImageFox()">Get a photo of a fox</button>
                 <button class="btn__input" @click="giveRandomImageCat()">Get a photo of a cat</button>
             </div>
@@ -20,15 +20,15 @@ export default {
         return {
             UrlImageOne: '',
             NumberImage: 1,
-            UrlAllRand: 'https://shibe.online/api/shibes?count=1&urls=true&httpsUrls=true',
+            UrlDogRand: 'https://shibe.online/api/shibes?count=1&urls=true&httpsUrls=true',
             UrlFoxRand: 'https://randomfox.ca/floof/',
             UrlCatRand: 'https://api.thecatapi.com/v1/images/search',
         }
     },
     methods: {
-        async giveRandomImage() {
+        async giveRandomImageDog() {
             try {
-                const response = await axios.get(this.UrlAllRand);
+                const response = await axios.get(this.UrlDogRand);
                 const date = response.data[0];
                 this.UrlImageOne = date;
             } catch (e) {
@@ -55,7 +55,7 @@ export default {
         },
     },
     mounted() {
-        this.giveRandomImage();
+        this.giveRandomImageDog();
     }
 }
 </script>
