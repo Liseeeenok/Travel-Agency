@@ -4,7 +4,7 @@
             <Line class="chart" :chart-data="createdChartData()" :chart-options="chartOptions"/>
             <Line class="chart" :chart-data="createdChartDataWeather()" :chart-options="chartOptionsWeather"/>
         </div>
-        <my-button @click="giveDataWeather()">giveWeather</my-button>
+        <my-button class="giveWeather" @click="giveDataWeather()">giveWeather</my-button>
     </div>
 </template>
 
@@ -113,8 +113,8 @@ export default {
                     data: this.arrTemp,
                     fill: true,
                     pointBackgroundColor: 'rgba(0, 0, 0, 0.5)',
-                    BackgroundColor: 'rgba(75, 192, 92, 0.5)',
-                    borderColor: 'rgb(75, 192, 92)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                    borderColor: 'rgb(75, 192, 192)',
                     pointHoverRadius: '10',
                 }]
             };
@@ -143,10 +143,22 @@ export default {
     .container__charts {
         flex-direction: column;
         align-items: center;
+        width: 70%;
+        margin: 0 auto;
     }
     .chart {
         width: 100%;
         margin-top: 2vw;
+    }
+}
+.giveWeather {
+    margin-top: 1vw;
+    margin-left: 70%;
+}
+@media (max-width: 769px) {
+    .giveWeather {
+        margin-top: 2vw;
+        margin-left: 40%;
     }
 }
 </style>
