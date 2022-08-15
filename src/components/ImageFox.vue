@@ -2,9 +2,9 @@
     <div class="container__api">
         <div>
             <div class="btn__api">
-                <button class="btn__input" @click="giveRandomImageDog()">Get a photo of a dog</button>
-                <button class="btn__input" @click="giveRandomImageFox()">Get a photo of a fox</button>
-                <button class="btn__input" @click="giveRandomImageCat()">Get a photo of a cat</button>
+                <my-button @click="giveRandomImageDog()">Get a photo of a dog</my-button>
+                <my-button @click="giveRandomImageFox()">Get a photo of a fox</my-button>
+                <my-button @click="giveRandomImageCat()">Get a photo of a cat</my-button>
             </div>
             <div class="container__image">
                 <img class="api__image" :src="this.UrlImageOne"/>
@@ -70,16 +70,6 @@ export default {
     display: flex;
     justify-content: center;
     margin-bottom: 1vw;
-}
-.btn__input {
-    padding: 1vw;
-    border-radius: 1vw;
-    background-color: #F0C53E;
-    border-width: 1px;
-    margin-left: 1vw;
-}
-.btn__input:hover {
-    cursor: pointer;
 }
 .container__image {
     position: relative;

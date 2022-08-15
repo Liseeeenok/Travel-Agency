@@ -4,11 +4,12 @@
             <Line class="chart" :chart-data="createdChartData()" :chart-options="chartOptions"/>
             <Line class="chart" :chart-data="createdChartDataWeather()" :chart-options="chartOptionsWeather"/>
         </div>
-        <button @click="giveDataWeather()">giveWeather</button>
+        <my-button @click="giveDataWeather()">giveWeather</my-button>
     </div>
 </template>
 
 <script>
+import MyButton from '@/UI/MyButton.vue'
 import axios from 'axios'
 import { Line } from 'vue-chartjs'
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, LineElement, PointElement, Filler} from 'chart.js'
@@ -36,7 +37,7 @@ export default {
             chartOptionsWeather: {
                 scales: {
                     y: {
-                        beginAtZero: false, //Начинать ли график с 0
+                        beginAtZero: false,
                     }
                 },
                 plugins: {

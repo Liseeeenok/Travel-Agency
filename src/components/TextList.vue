@@ -3,7 +3,7 @@
         <input class="first__input" type="text" placeholder="Enter something here" v-model="textFirstInput"/>
         <div class="work__input">
             <h2 style="padding: 1vw 0">The text of the input: {{ textFirstInput }}</h2>
-            <button v-if="textFirstInput !== ''" class="btn__input" @click="addTextInput">Save text</button>
+            <my-button v-if="textFirstInput !== ''" @click="addTextInput">Save text</my-button>
         </div>
         <div v-if="arrTextInput.length > 0">
             <hr>
@@ -59,15 +59,6 @@ export default {
     justify-content: space-between;
     margin-bottom: 1vw;
     align-items: center;
-}
-.btn__input {
-    padding: 1vw;
-    border-radius: 1vw;
-    background-color: #F0C53E;
-    border-width: 1px;
-}
-.btn__input:hover {
-    cursor: pointer;
 }
 .item__text {
     border: 1px solid black;
