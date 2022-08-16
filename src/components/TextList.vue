@@ -3,17 +3,17 @@
         <input class="first__input" type="text" placeholder="Enter something here" v-model="textFirstInput"/>
         <div class="work__input">
             <h2 style="padding: 1vw 0" class="text__input">The text of the input: {{ textFirstInput }}</h2>
-            <my-button v-if="textFirstInput !== ''" @click="addTextInput">Save text</my-button>
+            <my-button class="btn__save" v-if="textFirstInput !== ''" @click="addTextInput">Save text</my-button>
         </div>
         <div v-if="arrTextInput.length > 0">
             <hr>
             <h2 style="margin: 1vw 0">List of texts:</h2>
             <div v-for="text in arrTextInput" :key="text.id" class="item__text">
-                <div>
+                <div class="item__body__text">
                     <div>Id: {{ text.id }}</div>
                     <div>Text: {{ text.text }}</div>
                 </div>
-                <my-button class="btn__text" @click="deleteTextInArr(text)">Delete</my-button>
+                <button class="btn__text" @click="deleteTextInArr(text)">Delete</button>
             </div>    
         </div>
     </div>
@@ -74,6 +74,23 @@ export default {
     overflow: hidden;
 }
 .btn__text {
+    margin: auto 0;
+    height: 41px;
     width: 80px;
+    padding: 1vw;
+    border-radius: 1vw;
+    background-color: #B25A59;
+    border-width: 1px;
+}
+.btn__text:hover {
+    cursor: pointer;
+}
+.btn__save {
+    width: 100px;
+}
+.item__body__text {
+    width: 90%;
+    overflow: hidden;
+    word-wrap: break-word;
 }
 </style>
