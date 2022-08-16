@@ -2,7 +2,7 @@
     <div>
         <input class="first__input" type="text" placeholder="Enter something here" v-model="textFirstInput"/>
         <div class="work__input">
-            <h2 style="padding: 1vw 0">The text of the input: {{ textFirstInput }}</h2>
+            <h2 style="padding: 1vw 0" class="text__input">The text of the input: {{ textFirstInput }}</h2>
             <my-button v-if="textFirstInput !== ''" @click="addTextInput">Save text</my-button>
         </div>
         <div v-if="arrTextInput.length > 0">
@@ -13,7 +13,7 @@
                     <div>Id: {{ text.id }}</div>
                     <div>Text: {{ text.text }}</div>
                 </div>
-                <button class="btn__text" @click="deleteTextInArr(text)">Delete</button>
+                <my-button class="btn__text" @click="deleteTextInArr(text)">Delete</my-button>
             </div>    
         </div>
     </div>
@@ -68,14 +68,12 @@ export default {
     display: flex;
     justify-content: space-between;
 }
-.btn__text {
-    padding: 1vw;
-    border-radius: 1vw;
-    background-color: #B25A59;
-    color: white;
-    border-width: 1px;
+.text__input {
+    width: 100%;
+    word-wrap: break-word;
+    overflow: hidden;
 }
-.btn__text:hover {
-    cursor: pointer;
+.btn__text {
+    width: 80px;
 }
 </style>
