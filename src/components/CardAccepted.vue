@@ -57,7 +57,7 @@ export default {
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
-    margin-bottom: 100px;
+    margin-bottom: 2vw;
 }
 .card__domestic {
     background-image: linear-gradient(to top, rgba(127, 39, 54, 0.6), rgba(127, 39, 54, 0.6)), url(@/image/AcceptedImage1.svg);
@@ -71,6 +71,12 @@ export default {
     border: 1px solid #000000;
     background-color: rgb(127, 39, 54, 0.6);
     border-radius: 20px;
+    transition: 1s;
+    margin-bottom: 1vw;
+}
+.card__domestic:hover{
+    cursor: pointer;
+    transform: scale(1.2);
 }
 .card__text {
     font-family: 'Poppins';
@@ -93,6 +99,12 @@ export default {
     background-color: rgb(127, 39, 54, 0.6);
     border-radius: 20px;
     flex-direction: column;
+    transition: 1s;
+    margin-bottom: 1vw;
+}
+.card__inter:hover {
+    cursor: pointer;
+    transform: scale(1.2);
 }
 .start__trip {
     margin-top: 1vw;
@@ -102,5 +114,8 @@ export default {
     font-size: 16px;
     padding: 20px;
     border-radius: 80px;
+}
+.start__trip:hover {
+    cursor: pointer;
 }
 </style>

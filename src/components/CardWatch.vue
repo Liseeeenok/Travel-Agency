@@ -1,8 +1,13 @@
 <template>
     <div class="container">
         <div class="card__accepted">
-            <div class="card__title">Watch,<span style="color: #2C2D32;"> our lattest tour</span></div>
-            <div class="card__body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+            <div class="card__text">
+                <div class="card__title">Watch,<span style="color: #2C2D32;"> our lattest tour</span></div>
+                <div class="card__body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+            </div>
+            <div class="card__video">
+                <iframe class="video" width="1000" height="1000" src="https://www.youtube.com/embed/Sagg08DrO5U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </div>
     </div>
 </template>
@@ -19,11 +24,16 @@ export default {
     padding: 2vw 8vw 0;
 }
 .card__accepted {
+    display: flex;
     max-width: 1900px;
     margin: auto;
+    margin-bottom: 200px;
+}
+.card__text {
+    margin-top: 2vw;
+    width: 50%;
 }
 .card__title {
-    text-align: center;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
@@ -32,14 +42,23 @@ export default {
     color: #7F2736;
 }
 .card__body {
-    margin: 1vw auto 2vw;
-    width: 50%;
+    max-width: 730px;
+    margin: 1vw 2vw 0 0;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 180%;
-    text-align: center;
     color: #2C2D32;
+}
+.card__video {
+    overflow: hidden;
+    border-radius: 2vw;
+    width: 50%;
+}
+.video {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 </style>

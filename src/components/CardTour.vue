@@ -4,15 +4,15 @@
             <div class="card__title">Check Our Best <span style="color: #2C2D32;">Promotional Tour</span></div>
             <div class="card__body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
             <div class="card__slider">
-                <div>
+                <div class="slider__item">
                     <img class="image__tour" src="@/image/CardTourBeijing.png" />
                     <div class="image__captoin">Beijing</div>
                 </div>
-                <div>
+                <div class="slider__item">
                     <img class="image__tour" src="@/image/CradTourTurkey.png" />
                     <div class="image__captoin">Turkey</div>
                 </div>
-                <div>
+                <div class="slider__item">
                     <img class="image__tour" src="@/image/CardTourPakistan.png" />
                     <div class="image__captoin">Pakistan</div>
                 </div>
@@ -61,6 +61,12 @@ export default {
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
+}
+.slider__item {
+    transition: 1s;
+}
+.slider__item:hover {
+    transform: scale(1.2);
 }
 .image__tour {
     height: 200px;
