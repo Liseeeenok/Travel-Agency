@@ -13,15 +13,17 @@
             </div>
         </div>
     </div>
+    <card-footer/>
 </template>
 
 <script>
 import TextList from '@/components/TextList.vue'
 import ImageFox from '../components/ImageFox.vue'
 import CardGraph from '../components/CardGraph.vue'
+import CardFooter from '../components/CardFooter.vue'
 export default {
     components: {
-        TextList, ImageFox, CardGraph,
+        TextList, ImageFox, CardGraph, CardFooter
     }
 }
 </script>

@@ -49,7 +49,7 @@ export default {
     width: 40%;
 }
 .intro__title {
-    margin-top: 100px;
+    margin-top: 2vw;
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 800;
@@ -145,6 +145,22 @@ export default {
     }
     .add__image_2 {
         left: 0%;
+    }
+}
+@media (max-width: 769px) {
+    .intro {
+        flex-direction: column;
+    }
+    .intro__text {
+        max-width: none;
+        width: 100%;
+    }
+    .intro__buttons {
+        flex-direction: unset;
+        justify-content: unset;
+    }
+    .button_2 {
+        margin-left: 2vw;
     }
 }
 </style>

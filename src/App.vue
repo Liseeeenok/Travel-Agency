@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="Limitation">
         <navbar @clickBurger="clickBurger($event)"/>
         <router-view></router-view>
     </div>
@@ -40,5 +40,9 @@ export default {
 }
 body.lock {
     overflow: hidden;
+}
+.Limitation {
+    max-width: 1920px;
+    margin: auto;
 }
 </style>

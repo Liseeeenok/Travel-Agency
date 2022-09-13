@@ -27,7 +27,7 @@ export default {
     display: flex;
     max-width: 1900px;
     margin: auto;
-    margin-bottom: 200px;
+    margin-bottom: 2vw;
 }
 .card__text {
     margin-top: 2vw;
@@ -60,5 +60,16 @@ export default {
     display: block;
     max-width: 100%;
     max-height: 100%;
+}
+@media (max-width: 769px) {
+    .card__accepted {
+        flex-direction: column-reverse;
+    }
+    .card__text {
+        width: 100%;
+    }
+    .card__video {
+        width: 100%;
+    }
 }
 </style>

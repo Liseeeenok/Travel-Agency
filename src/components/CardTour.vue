@@ -80,4 +80,9 @@ export default {
     text-align: center;
     color: #7F2736;
 }
+@media (max-width: 769px) {
+    .slider__item {
+        margin: auto;
+    }
+}
 </style>

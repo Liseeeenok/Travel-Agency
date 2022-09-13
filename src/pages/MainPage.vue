@@ -4,6 +4,7 @@
         <card-tour/>
         <card-accepted/>
         <card-watch/>
+        <card-footer/>
     </div>
 </template>
 
@@ -13,8 +14,9 @@ import MainIntro from "@/components/MainIntro.vue";
 import CardTour from "@/components/CardTour.vue";
 import CardAccepted from "@/components/CardAccepted.vue";
 import CardWatch from '@/components/CardWatch.vue';
+import CardFooter from '@/components/CardFooter.vue';
 export default {
-    components: { Navbar, MainIntro, CardTour, CardAccepted, CardWatch }
+    components: { Navbar, MainIntro, CardTour, CardAccepted, CardWatch, CardFooter }
 }
 </script>
 
